@@ -1,0 +1,58 @@
+﻿<Window x:Class="ExerciseMemory.WindowExercise1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExerciseMemory"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="WindowExercise1" Height="450" Width="800"
+        AllowsTransparency="True" WindowStyle="None" Icon="/Logo2.png">
+    <Grid Background="#FF2C2C2C">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="415"/>
+        </Grid.RowDefinitions>
+        <Grid Name ="Toolbar" Grid.Row="0" Background ="Transparent" MouseDown="Toolbar_MouseDown">
+            <Button Content="" HorizontalAlignment="Left" Margin="761,0,0,0" VerticalAlignment="Center" Width="30" Height="30" Click="Exit_Click" FontSize="16" Cursor="Hand">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF673AB7" Opacity="0"/>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <ImageBrush ImageSource="/toolbar2_btn.png"/>
+                </Button.Background>
+            </Button>
+            <Button Content="" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="726,0,0,0" VerticalAlignment="Center" Width="30" Height="30" FontSize="16" Click="Minimize_Click">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF673AB7" Opacity="0"/>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <ImageBrush ImageSource="/toolbar1_btn.png"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <DataGrid x:Name="Ex1DataGrid" AutoGenerateColumns="False" Margin="0,106,201,105" Background="#FF2C2C2C" Foreground="White" FontSize="24" BorderBrush="#FF2C2C2C" FontFamily="Sitka Text" >
+                <DataGrid.Resources>
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Foreground" Value="White"/>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding event}" Header="Событие"/>
+                    <DataGridTextColumn Binding="{Binding date}" Header="Дата"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="Next" Content="Далее" HorizontalAlignment="Left" Margin="604,332,0,0" VerticalAlignment="Top" Width="150" Height="56" FontFamily="Sitka Text" FontSize="24" Click="Next_Click" Background="#FFFFD101" Foreground="#DD0E0E0E" BorderBrush="#FFFFD101"/>
+            <Button x:Name="Finish" Content="Закончить" HorizontalAlignment="Left" Margin="576,344,0,0" FontSize="28" FontFamily="Sitka Text" Foreground="#DD0E0E0E" VerticalAlignment="Top" Height="56" Width="186" Visibility="Collapsed" Click="Finish_Click" Background="#FFFFD101" BorderBrush="#FFFFD101" />
+            <TextBox x:Name="DateBox" HorizontalAlignment="Left" Margin="478,135,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Введите даты" materialDesign:TextFieldAssist.UnderlineBrush="#FFFFD101" materialDesign:HintAssist.Foreground="#848589" BorderBrush="#FF848589" CaretBrush="#FFFFD101" FontSize="24" VerticalAlignment="Top" Width="252" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Foreground="White" Visibility="Collapsed"/>
+            <Label x:Name="LabelTest" Content="Проверка" HorizontalAlignment="Center" Margin="0,40,0,0" VerticalAlignment="Top" FontSize="28" FontFamily="Sitka Text" Foreground="#FFFFFFFF" Visibility="Collapsed"/>
+            <Label x:Name="Answers" Content="Ответы:" HorizontalAlignment="Left" Margin="33,33,0,0" VerticalAlignment="Top" FontSize="24" FontFamily="Sitka Text" Foreground="White" Visibility="Collapsed"/>
+            <Label x:Name="Result1" Content="" HorizontalAlignment="Center" FontSize="24" FontFamily="Sitka Text" Margin="0,70,0,0" VerticalAlignment="Top" Width="500" Height="50" Visibility="Collapsed" Foreground="White"/>
+            <Label x:Name="Result2" Content="" HorizontalAlignment="Center" FontSize="24" FontFamily="Sitka Text" Margin="0,125,0,0" VerticalAlignment="Top" Width="500" Height="50" Visibility="Collapsed" Foreground="White"/>
+            <Label x:Name="Result3" Content="" HorizontalAlignment="Center" FontSize="24" FontFamily="Sitka Text" Margin="0,180,0,0" VerticalAlignment="Top" Width="500" Height="50" Visibility="Collapsed" Foreground="White"/>
+            <Label x:Name="Result4" Content="" HorizontalAlignment="Center" FontSize="24" FontFamily="Sitka Text" Margin="0,235,0,0" VerticalAlignment="Top" Width="500" Height="50" Visibility="Collapsed" Foreground="White"/>
+            <Label x:Name="Result5" Content="" HorizontalAlignment="Center" FontSize="24" FontFamily="Sitka Text" Margin="0,290,0,0" VerticalAlignment="Top" Width="500" Height="50" Visibility="Collapsed" Foreground="White"/>
+        </Grid>
+    </Grid>
+</Window>

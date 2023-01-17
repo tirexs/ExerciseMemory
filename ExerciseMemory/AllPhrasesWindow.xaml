@@ -1,0 +1,27 @@
+﻿<Window x:Class="ExerciseMemory.AllPhrasesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExerciseMemory"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="AllPhrasesWindow" Height="450" Width="800" Icon="/Logo2.png">
+    <Grid>
+        <DataGrid x:Name="BaseGrid" AutoGenerateColumns="False" Background="#FF2C2C2C" Foreground="White">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Foreground" Value="White"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="№"/>
+                <DataGridTextColumn Binding="{Binding phrase}" Header="Выражение"/>
+                <DataGridTextColumn Binding="{Binding translate}" Header="Перевод"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="FindBox" HorizontalAlignment="Right" materialDesign:HintAssist.Hint="Поиск" materialDesign:TextFieldAssist.UnderlineBrush="#FFFFD101" materialDesign:HintAssist.Foreground="#848589" BorderBrush="#FF848589" CaretBrush="#FFFFD101" Margin="0,5,90,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" FontSize="14" Cursor="Arrow" Foreground="White"/>
+        <Button Content="OK" HorizontalAlignment="Right" Margin="0,5,15,0" VerticalAlignment="Top"  Width="63" Background="#FFFFD101" BorderBrush="#FFFFD101" Click="Button_Find_Click" Foreground="#DD0E0E0E"/>
+
+    </Grid>
+</Window>

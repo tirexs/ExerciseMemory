@@ -1,0 +1,52 @@
+﻿<Window x:Class="ExerciseMemory.ExercisesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExerciseMemory"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="ExercisesWindow" Height="450" Width="800" 
+        AllowsTransparency="True" WindowStyle="None" Icon="/Logo2.png">
+    <Grid Background="#FF2C2C2C">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="415"/>
+        </Grid.RowDefinitions>
+        <Grid Name ="Toolbar" Grid.Row="0" Background ="Transparent" MouseDown="Toolbar_MouseDown">
+            <Button Content="" HorizontalAlignment="Left" Margin="761,0,0,0" VerticalAlignment="Center" Width="30" Height="30" Click="Exit_Click" FontSize="16" Cursor="Hand">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF673AB7" Opacity="0"/>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <ImageBrush ImageSource="/toolbar2_btn.png"/>
+                </Button.Background>
+            </Button>
+            <Button Content="" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="726,0,0,0" VerticalAlignment="Center" Width="30" Height="30" FontSize="16" Click="Minimize_Click">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF673AB7" Opacity="0"/>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <ImageBrush ImageSource="/toolbar1_btn.png"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Label x:Name="Chioce_ex" Content="Выберите упражнение" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" FontFamily="Sitka Text" FontSize="64" Width="722" Foreground="#FFC9C9C9"/>
+            <Button x:Name="Button_ex1" Content="Упражнение 1" HorizontalAlignment="Center" Margin="-500,289,0,0" VerticalAlignment="Top" Width="209" Height="76" FontFamily="Sitka Text" FontSize="24" Background="#FFFFD101" Foreground="#DD0E0E0E" BorderBrush="#FFFFD101" Click="Button_Exercise1_Click" Cursor="Hand"/>
+            <Button x:Name="Button_ex2" Content="Упражнение 2" HorizontalAlignment="Center" Margin="0,289,0,0" VerticalAlignment="Top" Width="208" Height="76" FontFamily="Sitka Text" FontSize="24" BorderBrush="#FFFFD101" Foreground="#DD000000" Background="#FFFFD101" Cursor="Hand" Click="Button_Exercise2_Click"/>
+            <Button x:Name="Button_ex3" Content="Упражнение 3" HorizontalAlignment="Center" Margin="550,289,50,0" VerticalAlignment="Top" Width="209" Height="76" FontFamily="Sitka Text" FontSize="24" Background="#FFFFD101" BorderBrush="Yellow" Foreground="#DD060606" Click="Button_Exercise3_Click"/>
+            <Button x:Name="options" Content="" HorizontalAlignment="Right" Margin="0,20,10,0" VerticalAlignment="Top" Height="50" Width="55" Cursor="Hand" Click="Button_Options_Click">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FFF8F7FC" Opacity="0"/>
+                </Button.BorderBrush>
+                <Button.Foreground>
+                    <SolidColorBrush Color="#DDFFFFFF" Opacity="0"/>
+                </Button.Foreground>
+                <Button.Background>
+                    <ImageBrush ImageSource="/settings_btn1.png"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>
